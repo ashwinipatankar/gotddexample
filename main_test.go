@@ -13,6 +13,7 @@ func TestSum(t *testing.T) {
 		{1, 2, 3},
 		{2, 2, 4},
 		{5, 2, 7},
+		//{5, 2, 10}, //Enable this to see the fail case
 	}
 
 	for _, table := range tables {
@@ -21,4 +22,9 @@ func TestSum(t *testing.T) {
 			t.Errorf("Sum of (%d+%d) was incorrect, got: %d, want: %d.", table.x, table.y, total, table.n)
 		}
 	}
+}
+
+func Testmain(t *testing.T) {
+	main()
+
 }
