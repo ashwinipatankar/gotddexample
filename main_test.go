@@ -1,27 +1,27 @@
 package main
 
 import "testing"
+import "github.com/stretchr/testify/assert"
 
 
 func TestSum(t *testing.T) {
-	tables := []struct {
-		x int
-		y int
-		n int
+	assert := assert.New(t)
+
+	var tests = []struct {
+		input1 int
+		input2 int
+		expected int
 	}{
 		{1, 1, 2},
 		{1, 2, 3},
 		{2, 2, 4},
 		{5, 2, 7},
-		//{5, 2, 10}, //Enable this to see the fail case
 	}
 
-	for _, table := range tables {
-		total := Sum(table.x, table.y)
-		if total != table.n {
-			t.Errorf("Sum of (%d+%d) was incorrect, got: %d, want: %d.", table.x, table.y, total, table.n)
-		}
+	for _, test := range tests {
+		assert.Equal(Sum(test.input1, test.input2), test.expected)
 	}
+	
 }
 
 func Testmain(t *testing.T) {
